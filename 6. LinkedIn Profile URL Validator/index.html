@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="message" style="font-size: 25px;"></div>
+    <script>
+        const url=prompt("Enter Your LinkedIn Profile URL","");
+        const regex=/^https:\/\/www\.linkedin\.com\/in\/[a-zA-Z0-9_-]{5,30}\/$/gi
+        const result=regex.test(url);
+        console.log(result)
+        let show=document.getElementById("message");
+        if(result){
+            show.innerHTML="Valid URL"
+        }
+        else{
+            show.innerHTML="InValid URL"
+        }
+        
+
+    </script>
+</body>
+</html>

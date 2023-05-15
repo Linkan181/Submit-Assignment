@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(249, 216, 234);
+            
+        }
+        h3,label{
+            color:rgb(122, 5, 122)
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="js_timer">
+        <div>
+            <h3>
+                Wait 5 second, this program will generate a random number
+            </h3>
+        </div>
+        <div id="timer">
+            00.0
+        </div>
+
+    </div>
+    <label for="">Random number : </label>
+    <span id="random">
+
+    </span>
+
+
+    <script>
+          let tim=document.getElementById("timer");
+          let selectRandom=document.getElementById("random");
+          let time=3000;
+          let coller=setInterval(collerFunction,time);
+         
+          
+         
+        // collerFunction();
+        function collerFunction(){
+            let sec=1;
+            let sett=setInterval(()=>{
+               tim.innerHTML="00:"+sec;
+               sec++;
+            },1000)
+            let id=setTimeout(rand,time);
+            let cutt= setTimeout(function() {
+           clearInterval(sett);
+          }, time);
+            // setTimeout(clearInterval(sett),3000);
+        }
+        // setTimeout(function() {
+        //    clearInterval(sett);
+        //   }, 3000)
+
+        // document.write("Random number : ")
+
+        // doucument.write("<br/>")
+        // let time=5000;
+        // let id=setTimeout(rand,time);
+        // let selectRandom=document.getElementById("random")
+        function rand(){
+            let x=Math.floor(Math.random()*1000);
+            selectRandom.innerHTML=x;
+        }
+    </script>
+</body>
+</html>
